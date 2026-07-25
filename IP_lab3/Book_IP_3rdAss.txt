@@ -1,0 +1,7 @@
+ Book IP
+
+ Opening generally smoothes the contour of an
+object, breaks narrow isthmuses, and eliminates thin protrusions. Closing also tends to smooth sections of contours, but, as opposed to opening, it generally fuses narrow
+breaks and long thin gulfs, eliminates small holes, and fills gaps in the contour.
+Thus, the opening A by B is the erosion of A by B, followed by a dilation of the result
+by B.
