@@ -1,0 +1,26 @@
+from utils import read_im, save_im
+import matplotlib.pyplot as plt
+import numpy as np
+
+im = read_im("results/duck_greyscale.jpeg")
+
+def inverse(im):
+    """ Finds the inverse of the grayscale image
+
+    Args:
+        im (np.array): Grayscale image of shape [H, W], values in [0,1]
+
+    Returns:
+        np.array: Inverted grayscale image of shape [H, W]
+    """
+    # Apply the inverse intensity transformation
+    im_inv = 1 - im
+    return im_inv
+
+im_inverse = inverse(im)
+
+plt.imshow(im_inverse, cmap='gray')
+plt.axis('off')  # optional
+plt.show()
+
+save_im("results/duck_inverse.jpeg", im

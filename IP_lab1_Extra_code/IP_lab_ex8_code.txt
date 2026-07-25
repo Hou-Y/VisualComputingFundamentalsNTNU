@@ -1,0 +1,27 @@
+from utils import read_im, save_im
+import matplotlib.pyplot as plt
+import numpy as np
+
+im = read_im("images/duck.jpeg")
+
+def greyscale(im):
+    """ Converts an RGB image to greyscale
+
+    Args:
+        im (np.array): RGB image of shape [H, W, 3]
+
+    Returns:
+        np.array: Grayscale image of shape [H, W]
+    """
+    # Use the sRGB weighted sum formula
+    grey = 0.2126 * im[:, :, 0] + 0.7152 * im[:, :, 1] + 0.0722 * im[:, :, 2]
+    return grey
+
+im_greyscale = greyscale(im)
+
+plt.imshow(im_greyscale, cmap='gray')
+plt.axis('off')  # optional, hides axes
+plt.show()
+
+save_im("results/duck_greyscale.jpeg", im_greyscale, cmap='gray')
+ 
